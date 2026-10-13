@@ -35,13 +35,39 @@ document.addEventListener("DOMContentLoaded", () => {
                 }).then((result) => {
                     if (result.isConfirmed) {
                         Swal.fire({
-                            title: "Updated!",
-                            text: "Workout has been updated.",
+                            title: "Created!",
+                            text: "Trip has been created.",
                             icon: "success"
                         })
                     }
                 })
             })
+        renderTripList()
     }
     main()
+    function renderTripList() {
+        const tripListEl = document.querySelector("#tripList")
+        tripList.forEach(i => {
+            const newDiv = document.createElement("div")
+            newDiv.classList.add("col")
+            newDiv.innerHTML = `<div class="card h-100 shadow-sm trip-card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h3 class="h5 card-title">Fukuoka, Japan</h3>
+                                <span class="badge text-bg-info align-self-start">10 days</span>
+                            </div>
+                            <p class="card-text text-body-secondary small mb-2">
+                                15 Jan – 24 Jan 2027
+                            </p>
+                            <p class="card-text">Food, onsens and day trips around Kyushu.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 d-flex gap-2">
+                            <button class="btn btn-sm btn-primary flex-fill">View</button>
+                            <button class="btn btn-sm btn-outline-secondary">Edit</button>
+                            <button class="btn btn-sm btn-outline-danger">Delete</button>
+                        </div>
+                    </div>`
+            tripListEl.appendChild(newDiv)
+        })
+    }
 })
