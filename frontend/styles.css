@@ -1,0 +1,29 @@
+/* Minimal custom styles — Bootstrap handles most of the layout */
+
+html {
+  scroll-padding-top: 70px; /* keeps section headings visible under the sticky navbar */
+}
+
+.hero {
+  background:
+    linear-gradient(rgba(13, 42, 84, 0.65), rgba(13, 42, 84, 0.65)),
+    url("https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600") center / cover;
+}
+
+.trip-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.trip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12) !important;
+}
+
+.activity-time {
+  min-width: 3.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.activity-item:hover {
+  background-color: var(--bs-tertiary-bg);
+}
