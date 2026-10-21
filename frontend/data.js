@@ -1,61 +1,61 @@
 let tripList = [
     {
-        "id": "trip-1",
-        "name": "Fukuoka, Japan",
-        "startDate": "2027-01-15",
-        "endDate": "2027-01-24",
-        "notes": "Food, onsens and day trips around Kyushu.",
-        "activities": [
-            { "id": "act-1", "day": 1, "time": "09:00", "title": "Arrive at Fukuoka Airport", "location": "FUK", "category": "Transport" },
-            { "id": "act-2", "day": 1, "time": "14:00", "title": "Check in to hotel", "location": "Hakata", "category": "Accommodation" },
-            { "id": "act-3", "day": 1, "time": "19:00", "title": "Yatai street food dinner", "location": "Nakasu", "category": "Food" },
-            { "id": "act-4", "day": 2, "time": "10:00", "title": "Dazaifu Tenmangu Shrine", "location": "Dazaifu", "category": "Sightseeing" },
-            { "id": "act-5", "day": 2, "time": "18:30", "title": "Ichiran ramen", "location": "Tenjin", "category": "Food" },
-            { "id": "act-6", "day": 3, "time": "11:00", "title": "Canal boat ride", "location": "Yanagawa", "category": "Sightseeing" },
-            { "id": "act-7", "day": 4, "time": "13:00", "title": "Canal City shopping", "location": "Hakata", "category": "Shopping" }
+        tripId: "trip-1",
+        tripName: "Fukuoka, Japan",
+        tripStartDate: "2027-01-15",
+        tripEndDate: "2027-01-24",
+        tripNotes: "Food, onsens and day trips around Kyushu.",
+        tripActivities: [
+            { activityId: "activity-1", activityDay: 1, activityTime: "09:00", activityTitle: "Arrive at Fukuoka Airport", activityLocation: "FUK", activityCategory: "Transport" },
+            { activityId: "activity-2", activityDay: 1, activityTime: "14:00", activityTitle: "Check in to hotel", activityLocation: "Hakata", activityCategory: "Accommodation" },
+            { activityId: "activity-3", activityDay: 1, activityTime: "19:00", activityTitle: "Yatai street food dinner", activityLocation: "Nakasu", activityCategory: "Food" },
+            { activityId: "activity-4", activityDay: 2, activityTime: "10:00", activityTitle: "Dazaifu Tenmangu Shrine", activityLocation: "Dazaifu", activityCategory: "Sightseeing" },
+            { activityId: "activity-5", activityDay: 2, activityTime: "18:30", activityTitle: "Ichiran ramen", activityLocation: "Tenjin", activityCategory: "Food" },
+            { activityId: "activity-6", activityDay: 3, activityTime: "11:00", activityTitle: "Canal boat ride", activityLocation: "Yanagawa", activityCategory: "Sightseeing" },
+            { activityId: "activity-7", activityDay: 4, activityTime: "13:00", activityTitle: "Canal City shopping", activityLocation: "Hakata", activityCategory: "Shopping" }
         ]
     },
     {
-        "id": "trip-2",
-        "name": "Seoul, South Korea",
-        "startDate": "2026-12-05",
-        "endDate": "2026-12-09",
-        "notes": "Winter city break with palaces, markets and cafes.",
-        "activities": [
-            { "id": "act-8", "day": 1, "time": "08:30", "title": "Airport railroad to Seoul Station", "location": "Incheon Airport", "category": "Transport" },
-            { "id": "act-9", "day": 1, "time": "15:00", "title": "Gyeongbokgung Palace", "location": "Jongno", "category": "Sightseeing" },
-            { "id": "act-10", "day": 1, "time": "19:00", "title": "Gwangjang Market dinner", "location": "Jongno", "category": "Food" },
-            { "id": "act-11", "day": 2, "time": "10:00", "title": "Bukchon Hanok Village", "location": "Bukchon", "category": "Sightseeing" },
-            { "id": "act-12", "day": 2, "time": "15:00", "title": "Myeongdong shopping", "location": "Myeongdong", "category": "Shopping" },
-            { "id": "act-13", "day": 3, "time": "17:30", "title": "N Seoul Tower at sunset", "location": "Namsan", "category": "Sightseeing" }
+        tripId: "trip-2",
+        tripName: "Seoul, South Korea",
+        tripStartDate: "2026-12-05",
+        tripEndDate: "2026-12-09",
+        tripNotes: "Winter city break with palaces, markets and cafes.",
+        tripActivities: [
+            { activityId: "activity-8", activityDay: 1, activityTime: "08:30", activityTitle: "Airport railroad to Seoul Station", activityLocation: "Incheon Airport", activityCategory: "Transport" },
+            { activityId: "activity-9", activityDay: 1, activityTime: "15:00", activityTitle: "Gyeongbokgung Palace", activityLocation: "Jongno", activityCategory: "Sightseeing" },
+            { activityId: "activity-10", activityDay: 1, activityTime: "19:00", activityTitle: "Gwangjang Market dinner", activityLocation: "Jongno", activityCategory: "Food" },
+            { activityId: "activity-11", activityDay: 2, activityTime: "10:00", activityTitle: "Bukchon Hanok Village", activityLocation: "Bukchon", activityCategory: "Sightseeing" },
+            { activityId: "activity-12", activityDay: 2, activityTime: "15:00", activityTitle: "Myeongdong shopping", activityLocation: "Myeongdong", activityCategory: "Shopping" },
+            { activityId: "activity-13", activityDay: 3, activityTime: "17:30", activityTitle: "N Seoul Tower at sunset", activityLocation: "Namsan", activityCategory: "Sightseeing" }
         ]
     },
     {
-        "id": "trip-3",
-        "name": "Bali, Indonesia",
-        "startDate": "2027-03-20",
-        "endDate": "2027-03-25",
-        "notes": "Relaxing beach and rice terrace trip.",
-        "activities": [
-            { "id": "act-14", "day": 1, "time": "12:00", "title": "Check in to villa", "location": "Ubud", "category": "Accommodation" },
-            { "id": "act-15", "day": 2, "time": "07:00", "title": "Tegallalang Rice Terraces", "location": "Ubud", "category": "Sightseeing" },
-            { "id": "act-16", "day": 2, "time": "13:00", "title": "Balinese cooking class", "location": "Ubud", "category": "Food" },
-            { "id": "act-17", "day": 4, "time": "16:30", "title": "Uluwatu Temple and Kecak dance", "location": "Uluwatu", "category": "Sightseeing" },
-            { "id": "act-18", "day": 5, "time": "10:00", "title": "Beach day", "location": "Seminyak", "category": "Other" }
+        tripId: "trip-3",
+        tripName: "Bali, Indonesia",
+        tripStartDate: "2027-03-20",
+        tripEndDate: "2027-03-25",
+        tripNotes: "Relaxing beach and rice terrace trip.",
+        tripActivities: [
+            { activityId: "activity-14", activityDay: 1, activityTime: "12:00", activityTitle: "Check in to villa", activityLocation: "Ubud", activityCategory: "Accommodation" },
+            { activityId: "activity-15", activityDay: 2, activityTime: "07:00", activityTitle: "Tegallalang Rice Terraces", activityLocation: "Ubud", activityCategory: "Sightseeing" },
+            { activityId: "activity-16", activityDay: 2, activityTime: "13:00", activityTitle: "Balinese cooking class", activityLocation: "Ubud", activityCategory: "Food" },
+            { activityId: "activity-17", activityDay: 4, activityTime: "16:30", activityTitle: "Uluwatu Temple and Kecak dance", activityLocation: "Uluwatu", activityCategory: "Sightseeing" },
+            { activityId: "activity-18", activityDay: 5, activityTime: "10:00", activityTitle: "Beach day", activityLocation: "Seminyak", activityCategory: "Other" }
         ]
     },
     {
-        "id": "trip-4",
-        "name": "Penang, Malaysia",
-        "startDate": "2026-11-14",
-        "endDate": "2026-11-16",
-        "notes": "Long weekend for hawker food and street art.",
-        "activities": [
-            { "id": "act-19", "day": 1, "time": "10:00", "title": "Flight to Penang", "location": "Changi Airport", "category": "Transport" },
-            { "id": "act-20", "day": 1, "time": "16:00", "title": "George Town street art walk", "location": "George Town", "category": "Sightseeing" },
-            { "id": "act-21", "day": 1, "time": "19:30", "title": "Gurney Drive hawker centre", "location": "Gurney Drive", "category": "Food" },
-            { "id": "act-22", "day": 2, "time": "09:00", "title": "Penang Hill funicular", "location": "Air Itam", "category": "Sightseeing" },
-            { "id": "act-23", "day": 2, "time": "13:00", "title": "Kek Lok Si Temple", "location": "Air Itam", "category": "Sightseeing" }
+        tripId: "trip-4",
+        tripName: "Penang, Malaysia",
+        tripStartDate: "2026-11-14",
+        tripEndDate: "2026-11-16",
+        tripNotes: "Long weekend for hawker food and street art.",
+        tripActivities: [
+            { activityId: "activity-19", activityDay: 1, activityTime: "10:00", activityTitle: "Flight to Penang", activityLocation: "Changi Airport", activityCategory: "Transport" },
+            { activityId: "activity-20", activityDay: 1, activityTime: "16:00", activityTitle: "George Town street art walk", activityLocation: "George Town", activityCategory: "Sightseeing" },
+            { activityId: "activity-21", activityDay: 1, activityTime: "19:30", activityTitle: "Gurney Drive hawker centre", activityLocation: "Gurney Drive", activityCategory: "Food" },
+            { activityId: "activity-22", activityDay: 2, activityTime: "09:00", activityTitle: "Penang Hill funicular", activityLocation: "Air Itam", activityCategory: "Sightseeing" },
+            { activityId: "activity-23", activityDay: 2, activityTime: "13:00", activityTitle: "Kek Lok Si Temple", activityLocation: "Air Itam", activityCategory: "Sightseeing" }
         ]
     }
 ]
@@ -63,15 +63,15 @@ let currentTripId = null
 
 function createActivity(tripList, activityDay, activityTime, activityTitle, activityLocation, activityCategory) {
     const newActivity = {
-        activityId: `activity-${Math.floor(Math.random * 100000) + 1}`,
+        activityId: `activity-${Math.floor(Math.random() * 100000) + 1}`,
         activityDay,
         activityTime,
         activityTitle,
         activityLocation,
         activityCategory
     }
-    const index = tripList.find(i => i.tripId === currentTripId)
-    index.tripActivities.push(newActivity)
+    const trip = tripList.find(i => i.tripId === currentTripId)
+    trip.tripActivities.push(newActivity)
 }
 
 function createTrip(tripList, tripName, tripStartDate, tripEndDate, tripNotes) {
@@ -85,4 +85,26 @@ function createTrip(tripList, tripName, tripStartDate, tripEndDate, tripNotes) {
     }
     currentTripId = newTrip.tripId
     tripList.push(newTrip)
+}
+
+function deleteTrip(tripList, tripIdToDelete) {
+    const tripIndexToDelete = tripList.findIndex(i => i.tripId === tripIdToDelete)
+    if (tripIndexToDelete !== -1) {
+        tripList.splice(tripIndexToDelete, 1)
+    }
+}
+
+function updateTrip(tripList, tripIdToUpdate, tripName, tripStartDate, tripEndDate, tripNotes) {
+    const trip = tripList.find(i => i.tripId === tripIdToUpdate)
+    trip.tripName = tripName
+    trip.tripStartDate = tripStartDate
+    trip.tripEndDate = tripEndDate
+    trip.tripNotes = tripNotes
+}
+
+function viewTrip(tripList, tripIdToView){
+    const indexToView = tripList.findIndex(i => i.tripId === tripIdToView)
+    if (indexToView !== -1){
+        currentTripId = indexToView
+    }
 }

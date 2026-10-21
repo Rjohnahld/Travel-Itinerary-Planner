@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         const tripEnd = document.querySelector("#tripEnd").value
                         const tripNotes = document.querySelector("#tripNotes").value
                         createTrip(tripList, tripName, tripStart, tripEnd, tripNotes)
+                        renderTripList()
                     }
                 }).then((result) => {
                     if (result.isConfirmed) {
@@ -47,27 +48,49 @@ document.addEventListener("DOMContentLoaded", () => {
     main()
     function renderTripList() {
         const tripListEl = document.querySelector("#tripList")
+        tripListEl.innerHTML = ""
         tripList.forEach(i => {
             const newDiv = document.createElement("div")
             newDiv.classList.add("col")
             newDiv.innerHTML = `<div class="card h-100 shadow-sm trip-card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between">
-                                <h3 class="h5 card-title">Fukuoka, Japan</h3>
+                                <h3 class="h5 card-title">${i.tripName}</h3>
                                 <span class="badge text-bg-info align-self-start">10 days</span>
                             </div>
                             <p class="card-text text-body-secondary small mb-2">
-                                15 Jan – 24 Jan 2027
+                                ${i.tripStartDate} to ${i.tripEndDate}
                             </p>
-                            <p class="card-text">Food, onsens and day trips around Kyushu.</p>
+                            <p class="card-text">${i.tripNotes}</p>
                         </div>
                         <div class="card-footer bg-white border-0 d-flex gap-2">
                             <button class="btn btn-sm btn-primary flex-fill">View</button>
-                            <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                            <button class="btn btn-sm btn-outline-danger">Delete</button>
+                            <button class="btn btn-sm btn-outline-secondary tripEditBtn">Edit</button>
+                            <button class="btn btn-sm btn-outline-danger tripDeleteBtn">Delete</button>
                         </div>
                     </div>`
+            newDiv.querySelector(".tripDeleteBtn")
+                .addEventListener("click", () => {
+                    deleteTrip(tripList, i.tripId)
+                    renderTripList()
+                })
+
+            newDiv.querySelector(".tripEditBtn")
+                .addEventListener("click", () => {
+                    const tripName = prompt("Destination:", i.tripName) ?? i.tripName
+                    const tripStartDate = prompt("Start date (YYYY-MM-DD):", i.tripStartDate) ?? i.tripStartDate
+                    const tripEndDate = prompt("End date (YYYY-MM-DD):", i.tripEndDate) ?? i.tripEndDate
+                    const tripNotes = prompt("Notes:", i.tripNotes) ?? i.tripNotes
+                    updateTrip(tripList, i.tripId, tripName, tripStartDate, tripEndDate, tripNotes)
+                    renderTripList()
+                })
             tripListEl.appendChild(newDiv)
         })
+    }
+    
+    function renderItinerary(){
+        const intineraryEl = document.querySelector("#itinerary")
+        intineraryEl.innerHTML = ""
+        const cardHeader = document.createElement("")
     }
 })

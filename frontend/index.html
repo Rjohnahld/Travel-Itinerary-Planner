@@ -67,7 +67,7 @@
 
             <!-- Trip cards get rendered here by JS. Example card kept for layout reference. -->
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="tripList">
-                <div class="col">
+                <!-- <div class="col">
                     <div class="card h-100 shadow-sm trip-card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between">
@@ -85,20 +85,15 @@
                             <button class="btn btn-sm btn-outline-danger">Delete</button>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
-            <!-- Empty state (show when there are no trips) -->
-            <div class="text-center text-body-secondary py-5 d-none" id="emptyState">
-                <p>No trips yet. Click <strong>New Trip</strong> to get started.</p>
-            </div>
         </section>
 
         <!-- ===== Itinerary (selected trip) ===== -->
         <section id="itinerary" class="mb-5">
             <div class="card shadow-sm">
-                <div
-                    class="card-header bg-white d-flex flex-wrap justify-content-between align-items-center gap-2 py-3">
+                <div class="card-header bg-white d-flex flex-wrap justify-content-between align-items-center gap-2 py-3">
                     <div>
                         <h2 class="h4 mb-0" id="itineraryTitle">Fukuoka, Japan</h2>
                         <small class="text-body-secondary" id="itineraryDates">15 Jan – 24 Jan 2027</small>
@@ -109,7 +104,6 @@
                 </div>
 
                 <div class="card-body">
-                    <!-- Day accordion, rendered by JS -->
                     <div class="accordion" id="dayAccordion">
                         <div class="accordion-item">
                             <h3 class="accordion-header">
