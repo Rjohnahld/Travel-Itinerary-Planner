@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <p class="card-text">${i.tripNotes}</p>
                         </div>
                         <div class="card-footer bg-white border-0 d-flex gap-2">
-                            <button class="btn btn-sm btn-primary flex-fill">View</button>
+                            <button class="btn btn-sm btn-primary flex-fill tripViewBtn">View</button>
                             <button class="btn btn-sm btn-outline-secondary tripEditBtn">Edit</button>
                             <button class="btn btn-sm btn-outline-danger tripDeleteBtn">Delete</button>
                         </div>
@@ -84,13 +84,56 @@ document.addEventListener("DOMContentLoaded", () => {
                     updateTrip(tripList, i.tripId, tripName, tripStartDate, tripEndDate, tripNotes)
                     renderTripList()
                 })
+            newDiv.querySelector(".tripViewBtn")
+                .addEventListener("click",()=>{
+                    viewTrip(tripList, i.tripId)
+                    renderItinerary()
+                })
             tripListEl.appendChild(newDiv)
         })
     }
-    
-    function renderItinerary(){
-        const intineraryEl = document.querySelector("#itinerary")
-        intineraryEl.innerHTML = ""
-        const cardHeader = document.createElement("")
+
+    function renderItinerary() {
+        const trip = tripList.find(i => i.tripId === currentTripId)
+        const tripItineraryListEl = document.querySelector("#itinerary")
+        const tripCard = document.createElement("div")
+        tripItineraryListEl.innerHTML = ""
+        tripCard.className = "card  shadow-sm"
+        tripCard.innerHTML = `<div class="card-header bg-white d-flex flex-wrap justify-content-between align-items-center gap-2 py-3">
+        <div>
+        <h2 class="h4 mb-0" id="itineraryTitle">Fukuoka, Japan</h2>
+        <small class="text-body-secondary" id="itineraryDates">15 Jan – 24 Jan 2027</small>
+        </div>
+        <button class="btn btn-success" id="addActivityBtn" type="button">
+        Add Activity
+        </button>
+        </div>
+
+        <div class="card-body">
+        <div class="accordion" id="dayAccordion">
+        </div>
+        </div>`
+        const accordionEl = document.querySelector("#dayAccordion")
+        const totalDays = getTripDays(trip)
+        for (let day = 1; day <= totalDays; day++) {
+            const dayActivities = trip.tripActivities
+                .filter(a => a.activityDay === day)
+                .sort((a, b) => a.activityTime.localeCompare(b.activityTime))
+            dayActivities.forEach(i => {
+                const newLiEl = document.createElement("li")
+                newLiEl.className = "list-group-item d-flex align-items-start gap-3 activity-item"
+                newLiEl.innerHTML = `<span class="badge text-bg-primary activity-time">${i.activityTime}</span>
+                                            <div class="flex-grow-1">
+                                                <div class="fw-semibold">${i.activityTitle}</div>
+                                                <small class="text-body-secondary">${i.activityLocation} · ${i.activityCategory}</small>
+                                            </div>
+                                            <div class="btn-group btn-group-sm">
+                                                <button class="btn btn-outline-secondary">Edit</button>
+                                                <button class="btn btn-outline-danger">Delete</button>
+                                            </div>`
+                ulEl.appendChild(newLiEl)
+            })
+        }
+        tripItineraryListEl.appendChild(tripCard)
     }
 })

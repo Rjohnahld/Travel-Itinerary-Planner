@@ -103,8 +103,13 @@ function updateTrip(tripList, tripIdToUpdate, tripName, tripStartDate, tripEndDa
 }
 
 function viewTrip(tripList, tripIdToView){
-    const indexToView = tripList.findIndex(i => i.tripId === tripIdToView)
-    if (indexToView !== -1){
-        currentTripId = indexToView
+    const trip = tripList.find(i => i.tripId === tripIdToView)
+    if (trip){
+        currentTripId = trip.tripId
     }
+}
+
+function getTripDays(trip) {
+    const ms = new Date(trip.tripEndDate) - new Date(trip.tripStartDate)
+    return ms / (1000 * 60 * 60 * 24) + 1  
 }
