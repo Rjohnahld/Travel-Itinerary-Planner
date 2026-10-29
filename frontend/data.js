@@ -113,3 +113,21 @@ function getTripDays(trip) {
     const ms = new Date(trip.tripEndDate) - new Date(trip.tripStartDate)
     return ms / (1000 * 60 * 60 * 24) + 1  
 }
+
+function deleteActivity(tripList, tripId, activityIdToDelete) {
+    const trip = tripList.find(i => i.tripId === tripId)
+    const activityIndexToDelete = trip.tripActivities.findIndex(i => i.activityId === activityIdToDelete)
+    if (activityIndexToDelete !== -1) {
+        trip.tripActivities.splice(activityIndexToDelete, 1)
+    }
+}
+
+function updateActivity(tripList, tripId, activityIdToUpdate, activityDay, activityTime, activityTitle, activityLocation, activityCategory) {
+    const trip = tripList.find(i => i.tripId === tripId)
+    const activity = trip.tripActivities.find(i => i.activityId === activityIdToUpdate)
+    activity.activityDay = activityDay
+    activity.activityTime = activityTime
+    activity.activityTitle = activityTitle
+    activity.activityLocation = activityLocation
+    activity.activityCategory = activityCategory
+}
